@@ -1,4 +1,4 @@
 # QLTV_TKPM
-Lấy file QLTV_database.txt chạy vào SQL mssm chạy script
-Chạy thành công và tạo DB rồi hẵn chạy project
-Hiện tại mới set được những phần cơ bản (Thêm xóa sửa và cập nhật). chưa set cứng mấy cái quy định
+Còn lỗi khi tạo data nên chưa tạo được script cho database có dữ liệu sẵn.
+Đã chỉnh sửa một số page cho phù hợp với biểu mẫu trong đề bài.
+Thêm nút search vào trang Danh sách sách (Sachs/Index) nhưng chức năng tìm kiếm chưa thực hiện được
