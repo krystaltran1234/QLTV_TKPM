@@ -1,0 +1,69 @@
+﻿@page
+@model QLTV_TKPM.Pages.Docgias.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Docgia</h4>
+<h2 class="py-3 text-danger">@Model.errorMessage</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Docgia.Id" />
+            <div class="form-group">
+                <label asp-for="Docgia.Hoten" class="control-label"></label>
+                <input asp-for="Docgia.Hoten" class="form-control" />
+                <span asp-validation-for="Docgia.Hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docgia.Diachi" class="control-label"></label>
+                <input asp-for="Docgia.Diachi" class="form-control" />
+                <span asp-validation-for="Docgia.Diachi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docgia.Email" class="control-label"></label>
+                <input asp-for="Docgia.Email" class="form-control" />
+                <span asp-validation-for="Docgia.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docgia.LoaiDocGia" class="control-label"></label>
+                <select asp-for="Docgia.LoaiDocGia" class="form-select">
+                    @if (Model.Loaidocgia.Count != 0)
+                            {
+                                @foreach (var LoaiDocGia in Model.Loaidocgia)
+                                {
+                                    <option value="@LoaiDocGia.Id">@LoaiDocGia.TenLoaidocgia</option>
+                                }
+                            }
+                </select>
+                <span asp-validation-for="Docgia.LoaiDocGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docgia.Ngaysinh" class="control-label"></label>
+                <input asp-for="Docgia.Ngaysinh" class="form-control" />
+                <span asp-validation-for="Docgia.Ngaysinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docgia.Ngaylapthe" class="control-label"></label>
+                <input asp-for="Docgia.Ngaylapthe" class="form-control" />
+                <span asp-validation-for="Docgia.Ngaylapthe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,71 @@
+﻿@page
+@model QLTV_TKPM.Pages.Docgias.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách độc giả</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].Hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].Diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].Email)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].LoaiDocGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].Ngaysinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docgia[0].Ngaylapthe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Docgia) {
+    if(@Model.Loaidocgia.Count>0)
+            {
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @Model.Loaidocgia[item.LoaiDocGia - 1].TenLoaidocgia )
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaysinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaylapthe)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+                
+            }
+            
+}
+    </tbody>
+</table>
