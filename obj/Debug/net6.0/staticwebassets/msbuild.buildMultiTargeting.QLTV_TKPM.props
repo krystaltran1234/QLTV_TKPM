@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\QLTV_TKPM.props" />
+</Project>
