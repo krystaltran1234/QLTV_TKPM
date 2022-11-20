@@ -1,0 +1,36 @@
+﻿@page
+@model QLTV_TKPM.Pages.Thoihanthes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Quy định thời hạn thẻ</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Thoihanthe[0].Sothang)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Thoihanthe) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sothang)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

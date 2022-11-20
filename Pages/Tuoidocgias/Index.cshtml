@@ -1,0 +1,42 @@
+﻿@page
+@model QLTV_TKPM.Pages.Tuoidocgias.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Quy định tuổi độc giả</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuoidocgia[0].TuoiMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuoidocgia[0].TuoiMax)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tuoidocgia) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TuoiMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TuoiMax)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
