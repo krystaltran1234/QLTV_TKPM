@@ -1,0 +1,85 @@
+﻿@page
+@model QLTV_TKPM.Pages.Phieumuonsachs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Phieumuonchitiet</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên độc giả
+        </dt>
+        <dd class="col-sm-10">
+            @if(Model.docgias != null)
+            {
+                @Html.DisplayFor(model => @Model.docgias.Hoten)
+            }
+            
+        </dd>
+        
+        <dt class="col-sm-2">
+            Ngày mượn
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phieumuonsachs.NgayMuon)
+        </dd>
+        
+    </dl>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên sách
+            </th>
+            <th>
+                Thể loại sách
+            </th>
+            <th>
+                Tác giả
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model.Phieumuonchitiets)
+{
+    if(@Model.saches.Count>0)
+            {
+                <tr>
+            <td>
+                 @Model.saches[item.MaSach-1].Tensach
+            </td>
+            <td>
+                @if(Model.theloaisaches.Count >0)
+                        {
+                            @Model.theloaisaches[Model.saches[item.MaSach-1].Theloaisach].Tentheloaisach
+                        }
+         
+            </td>
+            <td>
+                @Model.saches[item.MaSach-1].Tacgia
+            </td>
+            
+            </tr>
+            }
+            
+}
+    </tbody>
+</table>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Phieumuonsachs.Id" />
+        @for (int i =0; i <  @Model.Phieumuonchitiets.Count; i++)
+        {
+            <input type="hidden" asp-for="Phieumuonchitiets[i].Id" />
+        }
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

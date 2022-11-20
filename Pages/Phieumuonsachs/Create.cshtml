@@ -1,0 +1,102 @@
+﻿@page
+@using Microsoft.AspNetCore.Components.Web
+@model QLTV_TKPM.Pages.Phieumuonsachs.CreateModel
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>PHIẾU MƯỢN SÁCH</h1>
+<h2 class="py-3 text-danger">@Model.errorMessage</h2>
+<hr />
+<div class=" container p-3">
+    <div class="col">    
+        <form method="post">
+            @{
+                int cout = 0;
+                <div class="row pt-3">
+                <div class="col-8">                
+                        <div class="form-group row">
+
+                            <div class="col-md-2">
+                                <label  asp-for="phieumuonsachs.MaDocGia">Tên độc giả</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input asp-for="Madocgia" class="form-control" placeholder="Nhập mã độc giả" type="text" list="Madocgias" />
+                                <datalist id="Madocgias">
+                                    @if(Model.docgias.Count!=0)
+                                    {
+                                        foreach (var docgia in Model.docgias)
+                                        {
+                                            <option value="@docgia.Id-@docgia.Hoten"></option>
+                                        }                                        
+                                    }                                    
+                                </datalist>
+                            </div> 
+                            <span asp-validation-for="phieumuonsachs.MaDocGia" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-8">
+                        <div class="form-group row">
+                            <div class="col-md-2">
+                                <label asp-for="Ngaymuon" class="control-label"></label>
+                            </div>
+                            <div class="col-md-6"> 
+                                <input asp-for="Ngaymuon" class="form-control"/>
+                                <span asp-validation-for="Ngaymuon" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @for(int i =0; i< Model.Soluongsachmuon ; i++)
+                {
+                    <div class="row pt-3">
+                <div class="col-8">                
+                        <div class="form-group row">
+
+                            <div class="col-md-2">
+                                <label asp-for="Phieumuonchitiets[i].Id" >Tên sách </label>
+                            </div>
+                            <div class="col-md-6">
+                                    <input asp-for="Masach[i]" class="form-control" list="Sach" />
+                                <datalist id="Sach">
+                                    @if(Model.sachs.Count!=0)
+                                    {
+                                        
+                                        foreach (var sach in Model.sachs)
+                                        {
+                                            <option value="@sach.Id-@sach.Tensach"></option>
+                                            
+                                        }  
+                                        
+                                    }                                    
+                                </datalist>
+                            
+                            </div> 
+                        </div>
+                    </div>
+                                        
+                </div>
+                }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+            }
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

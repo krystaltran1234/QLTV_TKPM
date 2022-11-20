@@ -1,0 +1,58 @@
+﻿@page
+@model QLTV_TKPM.Pages.Sachs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sach</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Tensach)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Tensach)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Theloaisach)
+        </dt>
+        <dd class="col-sm-10">
+           @if (Model.Theloaisach != null)
+            {
+                @Model.Theloaisach.Tentheloaisach;
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Tacgia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Tacgia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.NamXb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.NamXb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.NhaXb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.NhaXb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Ngaynhap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Ngaynhap)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Sach?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

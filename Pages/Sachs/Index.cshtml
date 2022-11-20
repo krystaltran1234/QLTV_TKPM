@@ -1,0 +1,82 @@
+﻿@page
+@model QLTV_TKPM.Pages.Sachs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Danh sách sách</h1>
+<form asp-action="Search">
+    <p>
+        Title: <input type="text" class="form-control" name="SearchString" />
+        <input type="submit" class="btn btn-primary" value="Filter" />
+    </p>
+</form>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Tensach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Theloaisach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Tacgia)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Sach[0].NamXb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].NhaXb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Ngaynhap)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Tinhtrang)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sach) {
+    if (@Model.Theloaisach.Count >0)
+            {
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tensach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @Model.Theloaisach[item.Theloaisach - 1].Tentheloaisach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tacgia)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.NamXb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaXb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaynhap)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Tinhtrang)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+            }
+            
+}
+    </tbody>
+</table>

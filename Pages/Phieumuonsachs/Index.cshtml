@@ -1,0 +1,47 @@
+﻿@page
+@model QLTV_TKPM.Pages.Phieumuonsachs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Phieumuonsach[0].MaDocGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phieumuonsach[0].NgayMuon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Phieumuonsach) {
+    if(@Model.Docgia.Count >0)
+            {
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => @Model.Docgia[item.MaDocGia-1].Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayMuon)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+            
+            </tr>
+            }
+            
+}
+    </tbody>
+</table>

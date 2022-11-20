@@ -1,0 +1,61 @@
+﻿@page
+@model QLTV_TKPM.Pages.Sachs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sach</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Tensach)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Tensach)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Theloaisach)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Theloaisach != null)
+            {
+                @Model.Theloaisach.Tentheloaisach;
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Tacgia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Tacgia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.NamXb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.NamXb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.NhaXb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.NhaXb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sach.Ngaynhap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sach.Ngaynhap)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Sach.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

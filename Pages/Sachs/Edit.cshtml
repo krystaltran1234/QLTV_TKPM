@@ -1,0 +1,69 @@
+﻿@page
+@model QLTV_TKPM.Pages.Sachs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sach</h4>
+<h2 class="py-3 text-danger">@Model.errorMessage</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sach.Id" />
+            <div class="form-group">
+                <label asp-for="Sach.Tensach" class="control-label"></label>
+                <input asp-for="Sach.Tensach" class="form-control" />
+                <span asp-validation-for="Sach.Tensach" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sach.Theloaisach" class="control-label"></label>
+                <select asp-for="Sach.Theloaisach" class="form-select">
+                    @if (Model.Theloaisach.Count != 0)
+                            {
+                                @foreach (var Theloaisach in Model.Theloaisach)
+                                {
+                                    <option value="@Theloaisach.Id">@Theloaisach.Tentheloaisach</option>
+                                }
+                            }
+                </select>
+                <span asp-validation-for="Sach.Theloaisach" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sach.Tacgia" class="control-label"></label>
+                <input asp-for="Sach.Tacgia" class="form-control" />
+                <span asp-validation-for="Sach.Tacgia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sach.NamXb" class="control-label"></label>
+                <input asp-for="Sach.NamXb" class="form-control" />
+                <span asp-validation-for="Sach.NamXb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sach.NhaXb" class="control-label"></label>
+                <input asp-for="Sach.NhaXb" class="form-control" />
+                <span asp-validation-for="Sach.NhaXb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sach.Ngaynhap" class="control-label"></label>
+                <input asp-for="Sach.Ngaynhap" class="form-control" />
+                <span asp-validation-for="Sach.Ngaynhap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
