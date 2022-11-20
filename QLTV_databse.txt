@@ -1,0 +1,88 @@
+create database QLTV_TKPM
+use QLTV_TKPM;
+create table Theloaisach (
+	Id INT  NOT NULL IDENTITY(1,1),
+	Tentheloaisach nvarchar(255) NOT NULL,
+	Daxoa bit default 0,
+	primary key (Id)
+)
+create table Sach (
+	Id INT  NOT NULL IDENTITY(1,1),
+	Tensach nvarchar(255) NOT NULL,
+	Theloaisach INT NOT  NULL,
+	Tacgia nvarchar(255) NOT NULL,
+	NamXb INT NOT NULL,
+	NhaXb nvarchar(255) NOT NULL,
+	Ngaynhap Date not null,
+	TinhTrang nvarchar(255) default 'Chưa mượn',	
+	Daxoa bit default 0,
+	primary key (Id),
+	foreign key (Theloaisach) references Theloaisach(Id)
+)
+create table Loaidocgia (
+	Id INT  NOT NULL IDENTITY(1,1),
+	TenLoaidocgia nvarchar(255) NOT NULL,
+	Daxoa bit default 0,
+	primary key (Id)
+)
+create table Docgia (
+	Id INT  NOT NULL IDENTITY(1,1),
+	Hoten nvarchar(255) NOT NULL,
+	LoaiDocGia INT NOT NULL,
+	Diachi nvarchar(255) NOT NULL,
+	Email varchar(255) NOT NULL,
+	Ngaysinh Date not null,
+	Ngaylapthe Date not null,	
+	Daxoa bit default 0,
+	primary key (Id),
+	foreign key (LoaiDocGia) references Loaidocgia(Id)
+)
+create table Phieumuonsach (
+	Id INT  NOT NULL IDENTITY(1,1),
+	MaDocGia INT NOT NULL,
+	NgayMuon Date not null,
+	Daxoa bit default 0,	
+	primary key (Id),
+	foreign key (MaDocGia) references Docgia(Id)
+)
+create table Phieumuonchitiet (
+	Id INT  NOT NULL IDENTITY(1,1),
+	MaSach INT NOT NULL,
+	Maphieumuonsach INT NOT NULL,
+	Daxoa bit default 0,
+	primary key (Id),
+	foreign key (MaSach) references Sach(Id),
+	foreign key (Maphieumuonsach) references Phieumuonsach(Id)
+)
+
+create table Soluongsachmuon (
+	Id INT primary key NOT NULL IDENTITY(1,1),
+	Soluongsachmuontoida INT NOT NULL,
+	Ngaymuontoida INT NOT NULL,
+	Daxoa bit default 0
+)
+create table Thoihanthe(
+	Id INT primary key NOT NULL IDENTITY(1,1),
+	sothang INT NOT NULL,
+	Daxoa bit default 0
+)
+create table Tuoidocgia(
+	Id INT primary key NOT NULL IDENTITY(1,1),
+	Tuoimin INT NOT NULL,
+	Tuoimax INT NOT NULL,
+	Daxoa bit default 0
+)
+create table Namxuatban(
+	Id INT primary key NOT NULL IDENTITY(1,1),
+	Namxuatbang INT NOT NULL,
+	Daxoa bit default 0
+)
+
+create table Nguoidung (
+	Ma INT primary key NOT NULL IDENTITY(1,1),
+	Ten varchar(255) NOT NULL,
+	Email varchar(255) NOT NULL UNIQUE,
+	SDT varchar(11) NOT NULL UNIQUE,
+	LoaiNguoiDung varchar(255) NOT NULL,
+	matkhau	varchar(255) NOT NULL
+)
