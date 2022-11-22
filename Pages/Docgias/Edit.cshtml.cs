@@ -7,17 +7,22 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
+using BLL;
 
 namespace QLTV_TKPM.Pages.Docgias
 {
     public class EditModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
+        public XLLoaidocgia xLLoaidocgia { get; set; }
+        public XLDocgia xLDocgia { get; set; }
 
-        public EditModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public EditModel(DTODBContext context)
         {
             _context = context;
+            xLDocgia = new XLDocgia(context);
+            xLLoaidocgia = new XLLoaidocgia(context);
         }
         public IList<Loaidocgia> Loaidocgia { get; set; } = default!;
 
@@ -32,14 +37,15 @@ namespace QLTV_TKPM.Pages.Docgias
             
             if (_context.Loaidocgia != null)
             {
-                Loaidocgia = await _context.Loaidocgia.ToListAsync();
+                Loaidocgia = await xLLoaidocgia.GetAllAsync();
             }
             if (id == null || _context.Docgia == null)
             {
                 return NotFound();
             }
 
-            var docgia =  await _context.Docgia.FirstOrDefaultAsync(m => m.Id == id);
+            //var docgia =  await _context.Docgia.FirstOrDefaultAsync(m => m.Id == id);
+            var docgia = await xLDocgia.GetIdAsync(id.Value);
             if (docgia == null)
             {
                 return NotFound();
@@ -74,23 +80,24 @@ namespace QLTV_TKPM.Pages.Docgias
 
             }
 
-            _context.Attach(Docgia).State = EntityState.Modified;
+            await xLDocgia.EditAsync(Docgia);
+            //_context.Attach(Docgia).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DocgiaExists(Docgia.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            //try
+            //{
+            //    await _context.SaveChangesAsync();
+            //}
+            //catch (DbUpdateConcurrencyException)
+            //{
+            //    if (!DocgiaExists(Docgia.Id))
+            //    {
+            //        return NotFound();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
 
             return RedirectToPage("./Index");
         }

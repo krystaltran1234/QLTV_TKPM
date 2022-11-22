@@ -6,17 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
+using BLL;
 
 namespace QLTV_TKPM.Pages.Docgias
 {
     public class DetailsModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public DetailsModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public XLDocgia xLDocgia { get; set; }
+        public XLLoaidocgia xLLoaidocgia { get; set; }
+
+        public DetailsModel(DTODBContext context)
         {
             _context = context;
+            xLDocgia = new XLDocgia(context);
+            xLLoaidocgia = new XLLoaidocgia(context);
         }
         public Loaidocgia Loaidocgia { get; set; } = default!;
 
@@ -30,7 +36,7 @@ namespace QLTV_TKPM.Pages.Docgias
                 return NotFound();
             }
 
-            var docgia = await _context.Docgia.FirstOrDefaultAsync(m => m.Id == id);
+            var docgia = await xLDocgia.GetIdAsync(id.Value);
             if (docgia == null)
             {
                 return NotFound();
@@ -40,7 +46,7 @@ namespace QLTV_TKPM.Pages.Docgias
                 Docgia = docgia;
                 if (_context.Loaidocgia != null)
                 {
-                    Loaidocgia = await _context.Loaidocgia.FirstOrDefaultAsync(m => m.Id == Docgia.LoaiDocGia);
+                    Loaidocgia = await xLLoaidocgia.GetIdAsync(Docgia.LoaiDocGia);
                 }
             }
             return Page();

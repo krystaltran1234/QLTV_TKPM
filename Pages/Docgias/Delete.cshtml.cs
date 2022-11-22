@@ -6,33 +6,39 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
+using BLL;
 
 namespace QLTV_TKPM.Pages.Docgias
 {
     public class DeleteModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
+        public XLDocgia xLDocgia { get; set; }
+        public XLLoaidocgia xLLoaidocgia { get; set; }
 
-        public DeleteModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public DeleteModel(DTODBContext context)
         {
             _context = context;
+            xLDocgia = new XLDocgia(context);
+            xLLoaidocgia = new XLLoaidocgia(context);
         }
 
         [BindProperty]
-      public Docgia Docgia { get; set; }
+        public Docgia Docgia { get; set; }
+
         public Loaidocgia Loaidocgia { get; set; } = default!;
 
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
             
-            if (id == null || _context.Docgia == null)
+            if ( _context.Docgia == null)
             {
                 return NotFound();
             }
 
-            var docgia = await _context.Docgia.FirstOrDefaultAsync(m => m.Id == id);
+            var docgia = await xLDocgia.GetIdAsync(id);
 
             if (docgia == null)
             {
@@ -43,7 +49,7 @@ namespace QLTV_TKPM.Pages.Docgias
                 Docgia = docgia;
                 if (_context.Loaidocgia != null)
                 {
-                    Loaidocgia = await _context.Loaidocgia.FirstOrDefaultAsync(m => m.Id == Docgia.LoaiDocGia);
+                    Loaidocgia = await xLLoaidocgia.GetIdAsync(Docgia.LoaiDocGia);
                 }
             }
             return Page();
@@ -55,13 +61,12 @@ namespace QLTV_TKPM.Pages.Docgias
             {
                 return NotFound();
             }
-            var docgia = await _context.Docgia.FindAsync(id);
+            var docgia = await xLDocgia.FindAsync(id.Value);
 
             if (docgia != null)
             {
                 Docgia = docgia;
-                _context.Docgia.Remove(Docgia);
-                await _context.SaveChangesAsync();
+                await xLDocgia.PostDeleteAsync(docgia);
             }
 
             return RedirectToPage("./Index");

@@ -5,229 +5,228 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QLTV_TKPM
 build_property.RootNamespace = QLTV_TKPM
-build_property.ProjectDir = D:\Study\TKPM\DoAn\Clone 2\
+build_property.ProjectDir = C:\Users\HAO\Desktop\Git\QLTV_TKPM\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Study\TKPM\DoAn\Clone 2
+build_property.MSBuildProjectDirectory = C:\Users\HAO\Desktop\Git\QLTV_TKPM
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Docgias/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Docgias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZ2lhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Docgias/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Docgias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZ2lhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Docgias/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Docgias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZ2lhc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Docgias/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Docgias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZ2lhc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Docgias/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Docgias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZ2lhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Error.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Loaidocgias/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Loaidocgias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9haWRvY2dpYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Loaidocgias/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Loaidocgias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9haWRvY2dpYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Loaidocgias/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Loaidocgias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9haWRvY2dpYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Loaidocgias/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Loaidocgias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9haWRvY2dpYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Loaidocgias/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Loaidocgias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9haWRvY2dpYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Namxuatbans/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Namxuatbans/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmFteHVhdGJhbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Namxuatbans/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Namxuatbans/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmFteHVhdGJhbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Namxuatbans/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Namxuatbans/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmFteHVhdGJhbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Namxuatbans/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Namxuatbans/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmFteHVhdGJhbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Namxuatbans/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Namxuatbans/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmFteHVhdGJhbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonchitiets/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonchitiets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uY2hpdGlldHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonchitiets/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonchitiets/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uY2hpdGlldHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonsachs/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonsachs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uc2FjaHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonsachs/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonsachs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uc2FjaHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonsachs/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonsachs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uc2FjaHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonsachs/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonsachs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uc2FjaHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Phieumuonsachs/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Phieumuonsachs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhpZXVtdW9uc2FjaHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Privacy.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Sachs/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Sachs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FjaHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Sachs/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Sachs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FjaHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Sachs/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Sachs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FjaHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Sachs/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Sachs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FjaHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Sachs/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Sachs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FjaHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Soluongsachmuons/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Soluongsachmuons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29sdW9uZ3NhY2htdW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Soluongsachmuons/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Soluongsachmuons/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29sdW9uZ3NhY2htdW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Soluongsachmuons/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Soluongsachmuons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29sdW9uZ3NhY2htdW9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Soluongsachmuons/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Soluongsachmuons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29sdW9uZ3NhY2htdW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Soluongsachmuons/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Soluongsachmuons/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29sdW9uZ3NhY2htdW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Theloaisachs/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Theloaisachs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbG9haXNhY2hzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Theloaisachs/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Theloaisachs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbG9haXNhY2hzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Theloaisachs/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Theloaisachs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbG9haXNhY2hzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Theloaisachs/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Theloaisachs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbG9haXNhY2hzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Theloaisachs/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Theloaisachs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbG9haXNhY2hzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Thoihanthes/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Thoihanthes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhvaWhhbnRoZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Thoihanthes/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Thoihanthes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhvaWhhbnRoZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Thoihanthes/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Thoihanthes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhvaWhhbnRoZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Thoihanthes/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Thoihanthes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhvaWhhbnRoZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Thoihanthes/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Thoihanthes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhvaWhhbnRoZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Tuoidocgias/Create.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Tuoidocgias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVvaWRvY2dpYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Tuoidocgias/Delete.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Tuoidocgias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVvaWRvY2dpYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Tuoidocgias/Details.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Tuoidocgias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVvaWRvY2dpYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Tuoidocgias/Edit.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Tuoidocgias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVvaWRvY2dpYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Tuoidocgias/Index.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Tuoidocgias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVvaWRvY2dpYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/_ViewImports.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/_ViewStart.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/TKPM/DoAn/Clone 2/Pages/Shared/_Layout.cshtml]
+[C:/Users/HAO/Desktop/Git/QLTV_TKPM/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gb8v0hxqkr

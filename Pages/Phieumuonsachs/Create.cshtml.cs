@@ -8,15 +8,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Phieumuonsachs
 {
     public class CreateModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public CreateModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public CreateModel(DTODBContext context)
         {
             _context = context;
         }
@@ -96,6 +96,7 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+
            
             if(!checkMasach())
             {
@@ -142,32 +143,56 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
             phieumuonsachs.NgayMuon = Ngaymuon;
             _context.Phieumuonsach.Add(phieumuonsachs);
             await _context.SaveChangesAsync();
-            int j = 0;
-            int Maphieumuon = phieumuonsachs.Id;
+
             Phieumuonchitiet phieumuonchitiet;
             for(int i=0; i<Masach.Count; i++)
             {
                 phieumuonchitiet = new Phieumuonchitiet();
+                
                 if (Masach[i]!=null)
-                {
-                    phieumuonchitiet.Maphieumuonsach = Maphieumuon;
-                    phieumuonchitiet.MaSach = int.Parse(Masach[i].Split('-')[0]);
+                {                    
+                    phieumuonchitiet.Maphieumuonsach = phieumuonsachs.Id;
+                    phieumuonchitiet.MaSach = int.Parse(Masach[i].Split('-')[0]); 
                     _context.Phieumuonchitiet.Add(phieumuonchitiet);
                     
                 }    
             }
+           
             await _context.SaveChangesAsync();
-            for(int i = 0; i < Masach.Count; i++)
+            for (int i = 0; i < Masach.Count; i++)
             {
-                int masach = int.Parse(Masach[i].Split('-')[0]);
-                await _context.Sach.FromSqlRaw($"UPDATE Sach SET Tinhtrang = 'Đã mượn' WHERE Id =  {masach} ").ToListAsync();
-            }    
-        
+                if (Masach[i] != null)
+                {
+                    var _sach1 = new Sach
+                    {
+                        Id = int.Parse(Masach[i].Split('-')[0]),
+                        Tinhtrang = "Đã Mượn"
+                    };
+                    _context.Attach(_sach1);
+                    _context.Entry(_sach1).Property(r => r.Tinhtrang).IsModified = true;
+                    await _context.SaveChangesAsync();
+                }
+            }
+            //_context.Attach(Sach).State = 
 
-           //_context.Phieumuonchitiet.Add(1);
-            
+
+
+
+            //for (int i = 0; i < Masach.Count; i++)
+            //{
+            //    int masach = int.Parse(Masach[i].Split('-')[0]);
+            //    await _context.Sach.FromSqlRaw($"UPDATE Sach SET Tinhtrang = N'Đã mượn' WHERE Id =  {masach} ").ToListAsync();
+            //}    
+
+
+            //_context.Phieumuonchitiet.Add(1);
+
 
             return RedirectToPage("./Index");
+        }
+        private bool SachExists(int id)
+        {
+            return _context.Sach.Any(e => e.Id == id);
         }
     }
 }

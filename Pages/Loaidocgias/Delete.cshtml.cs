@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Loaidocgias
 {
     public class DeleteModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public DeleteModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public DeleteModel(DTODBContext context)
         {
             _context = context;
         }

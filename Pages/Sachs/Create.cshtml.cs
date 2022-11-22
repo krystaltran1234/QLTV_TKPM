@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Sachs
 {
     public class CreateModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public CreateModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public CreateModel(DTODBContext context)
         {
             _context = context;
         }
@@ -57,7 +57,7 @@ namespace QLTV_TKPM.Pages.Sachs
                     if (  DateTime.Today.Year - Sach.NamXb >= namxuatban[0].Namxuatbang)
                     {
                         errorMessage = "Sách quá hạn quy định";
-                        RedirectToPage("./Create");
+                        return RedirectToPage("./Create");
                     }    
                     
                 }

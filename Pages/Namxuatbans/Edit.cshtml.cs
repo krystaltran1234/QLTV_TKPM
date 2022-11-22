@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Namxuatbans
 {
     public class EditModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public EditModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public EditModel(DTODBContext context)
         {
             _context = context;
         }

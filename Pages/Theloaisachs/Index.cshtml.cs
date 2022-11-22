@@ -6,15 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Theloaisachs
 {
     public class IndexModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public IndexModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public IndexModel(DTODBContext context)
         {
             _context = context;
         }
@@ -23,11 +26,19 @@ namespace QLTV_TKPM.Pages.Theloaisachs
 
         public async Task OnGetAsync()
         {
+
+            var theloaisaches = from m in _context.Theloaisach
+                        select m;
             if (_context.Theloaisach != null)
             {
                 Theloaisach = await _context.Theloaisach.ToListAsync();
             }
-            
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                theloaisaches = theloaisaches.Where(s => s.Tentheloaisach.Contains(SearchString));
+                Theloaisach = await theloaisaches.ToListAsync();
+            }
+
         }
     }
 }

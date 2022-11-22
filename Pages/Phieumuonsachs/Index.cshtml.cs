@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Phieumuonsachs
 {
     public class IndexModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public IndexModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public IndexModel(DTODBContext context)
         {
             _context = context;
         }
@@ -23,15 +23,25 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
 
         public IList<Docgia> Docgia { get; set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
-            if(_context.Docgia != null)
+            var docgias = from m in _context.Docgia
+                        select m;
+            if (_context.Docgia != null)
             {
                 Docgia = await _context.Docgia.ToListAsync();
             }    
             if (_context.Phieumuonsach != null)
             {
                 Phieumuonsach = await _context.Phieumuonsach.ToListAsync();
+            }
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                docgias = docgias.Where(s => s.Hoten.Contains(SearchString));
+                Docgia = await docgias.ToListAsync();
             }
         }
        

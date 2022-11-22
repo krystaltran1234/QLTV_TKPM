@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using QLTV_TKPM.Data;
+using Entity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<QLTV_TKPMContext>(options =>
+//builder.Services.AddDbContext<DTODBContext>();
+builder.Services.AddDbContext<DTODBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("QLTV_TKPMContext") ?? throw new InvalidOperationException("Connection string 'QLTV_TKPMContext' not found.")));
 
 var app = builder.Build();

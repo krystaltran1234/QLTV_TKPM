@@ -7,18 +7,22 @@
 
 
 <h1>Danh sách sách</h1>
-<form asp-action="Search">
-    <p>
-        Title: <input type="text" class="form-control" name="SearchString" />
-        <input type="submit" class="btn btn-primary" value="Filter" />
-    </p>
-</form>
+
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sach[0].Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sach[0].Tensach)
             </th>
@@ -48,6 +52,9 @@
     if (@Model.Theloaisach.Count >0)
             {
                 <tr>
+                    <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Tensach)
             </td>

@@ -8,36 +8,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
-using QLTV_TKPM.Models;
+using Entity;
 
 namespace QLTV_TKPM.Pages.Phieumuonsachs
 {
     public class EditModel : PageModel
     {
-        private readonly QLTV_TKPM.Data.QLTV_TKPMContext _context;
+        private readonly DTODBContext _context;
 
-        public EditModel(QLTV_TKPM.Data.QLTV_TKPMContext context)
+        public EditModel(DTODBContext context)
         {
             _context = context;
         }
 
         public int Soluongsachmuon { get; set; }
-        [Required]
-        [BindProperty]
-        public string Madocgia { get; set; }
+        
 
-        [Required]
-        [BindProperty]
-        public int Maphieumuonsach { get; set; }
+              
 
-        [Required]
-        [DataType(DataType.Date)]
-        [BindProperty]
-        [Display(Name = "Ngày mượn")]
-        public DateTime Ngaymuon { get; set; }
-
-        [BindProperty]
-        public IList<string> Masach { get; set; }
 
         [BindProperty]
         public IList<Phieumuonchitiet> Phieumuonchitiets { get; set; }
@@ -45,8 +33,7 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
         [BindProperty]
         public Phieumuonsach phieumuonsaches { get; set; }
 
-        [BindProperty]
-        public IList<int> Maphieumuonchitiet { get; set; }
+
 
         public IList<Docgia> docgias { get; set; }
 
@@ -59,7 +46,6 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            Maphieumuonchitiet = new List<int>();
             var Soluongsachmuons = await _context.Soluongsachmuon.ToListAsync();
 
 
@@ -127,16 +113,16 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
 
             if (!ModelState.IsValid)
             {
-                return Page();
+                return RedirectToPage("./Index");
             }
 
-            
             if (_context.Docgia != null)
             {
                 var docgias = await _context.Docgia.FirstOrDefaultAsync(m => m.Id == phieumuonsaches.MaDocGia);
+                var Ngaymuon = phieumuonsaches.NgayMuon;
                 if (docgias.Ngaylapthe.Year - Ngaymuon.Year > 0)
                 {
-                    return Page();
+                    return RedirectToPage("./Index");
                 }
                 else
                 {
@@ -158,23 +144,24 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
 
             }
             _context.Attach(phieumuonsaches).State = EntityState.Modified;
-            
-                
+            await _context.SaveChangesAsync();
+            List<Sach> _sach = new List<Sach>();
             try
             {
-                await _context.SaveChangesAsync();
-
-                foreach (var item in Phieumuonchitiets)
+                for(int i = 0; i<Phieumuonchitiets.Count;i++)
                 {
-
-                    //Phieumuonchitiet phieumuonchitiet = new Phieumuonchitiet();
-                    //phieumuonchitiet.MaSach = int.Parse(Masach[i].Split('-')[0]);
-                    //phieumuonchitiet.Id = Maphieumuonchitiet[i];
-                    //phieumuonchitiet.Maphieumuonsach = Maphieumuonsach;
-                    _context.Attach(item).State = EntityState.Modified;
-                    
+                    var _sach1 = new Sach
+                    {
+                        Id = Phieumuonchitiets[i].MaSach,
+                        Tinhtrang = "Đã Mượn"
+                    };
+                    _context.Attach(_sach1);
+                    _context.Entry(_sach1).Property(r => r.Tinhtrang).IsModified = true;
+                    await _context.SaveChangesAsync();
                 }
-                await _context.SaveChangesAsync();
+                
+                
+                
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -194,7 +181,7 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
         public bool checkMasach()
         {
             int i = 0;
-            foreach (var item in Masach)
+            foreach (var item in Phieumuonchitiets)
             {
                 if (item != null)
                 {
