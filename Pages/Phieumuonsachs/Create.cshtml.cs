@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTV_TKPM.Data;
 using Entity;
+using BLL;
 
 namespace QLTV_TKPM.Pages.Phieumuonsachs
 {
@@ -16,9 +17,18 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
     {
         private readonly DTODBContext _context;
 
+        private XLPhieumuonsach xLPhieumuonsach { get; set; }
+        private XLSoluongsachmuon xLSoluongsachmuon { get; set; }
+        private XLSach xLSach { get; set; }
+        public XLDocgia xLDocgia { get; set; }
+
         public CreateModel(DTODBContext context)
         {
             _context = context;
+            xLSach = new XLSach(context);
+            xLSoluongsachmuon = new XLSoluongsachmuon(context);
+            xLDocgia = new XLDocgia(context);
+
         }
         public Docgia docgia { get; set; }               
 
@@ -51,7 +61,7 @@ namespace QLTV_TKPM.Pages.Phieumuonsachs
         public async Task<IActionResult> OnGetAsync()
         {
             Ngaymuon = DateTime.Today;
-            var Soluongsachmuons = await _context.Soluongsachmuon.ToListAsync();
+            var Soluongsachmuons = await xLSoluongsachmuon.GetAllAsync();
                 
             if (_context.Soluongsachmuon != null)
             {
