@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Entity;
-using QLTV_TKPM.Data;
-using DTO;
 using BLL;
 
 namespace QLTV_TKPM.Pages.Docgias
